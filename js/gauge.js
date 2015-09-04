@@ -30,8 +30,7 @@ function DibujaGauge() {
 // Dibuja el Fondo y Borde
 function FondoGauge(ctx, radio) {
   var grad;
-  ctx.restore();
-  ctx.save();
+  ctx.clearRect(-radio*3, -radio*3, radio*6, radio*6);
   ctx.beginPath();
   ctx.arc(0,0,radio*1.02, Math.PI, 2*Math.PI);
   ctx.fillStyle = "#444";
