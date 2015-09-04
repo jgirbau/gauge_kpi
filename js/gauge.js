@@ -110,4 +110,4 @@ function Agujas(ctx, radio){
 	ctx.arc(0,0, radio * 0.15, 0, 2*Math.PI);
 	ctx.fillStyle = grad;
 	ctx.fill();
-}
+};
