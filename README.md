@@ -1,4 +1,4 @@
-# gauge_kpi
+# Gauge Indicator
 Gauge animated indicator using canvas.
 
 This is a gauge indicator web component, which you can add to your own web pages, 
