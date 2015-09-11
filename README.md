@@ -12,6 +12,8 @@ It's very colourful, animated and sizable to fit your needs, but please keep the
 shape relation 4x3 of width x height. We recommend at least 200 x 150 px in order
 to see all details.
 
+Demo page at: [Start Demo](https://jgirbau.github.io/gauge_kpi/)
+
 You can use it in addition to your preferred Framework library.
 
 For a more customized graphic you can write to: jorge.girbau@gmail.com
