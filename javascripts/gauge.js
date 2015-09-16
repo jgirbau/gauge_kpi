@@ -31,30 +31,40 @@ function DibujaGauge() {
 function FondoGauge(ctx, radio) {
   var grad;
   ctx.clearRect(-radio*3, -radio*3, radio*6, radio*6);
+  grad = ctx.createRadialGradient(0, 0, radio, 0, 0, radio*1.04);
+  grad.addColorStop(0, "#ddd");
+  grad.addColorStop(1, "#555");
   ctx.beginPath();
-  ctx.arc(0,0,radio*1.02, Math.PI, 2*Math.PI);
-  ctx.fillStyle = "#444";
+  ctx.arc(0,0,radio*1.04, Math.PI, 2*Math.PI);
+  ctx.fillStyle = grad;
   ctx.fill();
   ctx.beginPath();
   ctx.arc(0, 0, radio, Math.PI, 2*Math.PI);
+  ctx.lineTo(radio*0.6, 0);
+  ctx.arc(0, 0, radio*0.6, 2*Math.PI, Math.PI, true);
   ctx.fillStyle = '#0b3';
+  ctx.closePath();
   ctx.fill();
   ctx.beginPath();
   ctx.arc( 0, 0, radio, (1+corte) * Math.PI, 2*Math.PI);
-  ctx.lineTo(0,0);
+  ctx.lineTo(radio*0.6, 0);
+  ctx.arc(0, 0, radio*0.6, 2*Math.PI, (1+corte)*Math.PI, true);
   ctx.fillStyle = '#ff0';
+  ctx.closePath();
   ctx.fill();
   ctx.beginPath();
   ctx.arc( 0, 0, radio, (1+cort2) * Math.PI, 2*Math.PI);
-  ctx.lineTo(0,0);
+  ctx.lineTo(radio*0.6,0);
+  ctx.arc(0, 0, radio*0.6, 2*Math.PI, (1+cort2)*Math.PI, true);
   ctx.fillStyle = '#c00';
+  ctx.closePath();
   ctx.fill();
   grad = ctx.createLinearGradient(0, 0, 0, radio / 10);
   grad.addColorStop(0, "#666");
   grad.addColorStop(0.5, "#fff");
   grad.addColorStop(1, "#666");
   ctx.fillStyle = grad;
-  ctx.fillRect(-radio*1.02, 0, 2.04*radio, radio*0.1);
+  ctx.fillRect(-radio*1.04, 0, 2.08*radio, radio*0.1);
   ctx.beginPath();
   ctx.arc(0,0, radio / 10, 0, 2*Math.PI);
   ctx.fillStyle = "#777";
@@ -71,16 +81,16 @@ function MarcasGauge(ctx, radio) {
   ctx.fillStyle = "#007";
   ctx.fillText("Indicador KPI", 0, radio*0.32);
   ctx.fillStyle = "#000";
-  ctx.fillText("Sistemas400", 0, -radio*0.5);
+  ctx.fillText("Sistemas400", 0, -radio*0.4);
   ctx.font = radio*0.10 + "px system";
   for(num = 0; num < 11; num++){
     ang = num * Math.PI / 10;
     ctx.rotate(ang);
-    ctx.translate(-radio*0.85, 0);
+    ctx.translate(-radio*0.9, 0);
     ctx.rotate(-ang);
     ctx.fillText(parseInt(num * maxim / 10), 0, -radio*0.05);
     ctx.rotate(ang);
-    ctx.translate(radio*0.85, 0);
+    ctx.translate(radio*0.9, 0);
     ctx.rotate(-ang);
 	
   }
